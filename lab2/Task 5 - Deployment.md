@@ -88,7 +88,7 @@ kubectl edit deploy dp2
 ```
 kubectl set image deployment/dp2 nginx=nginx:1.16.0 --record=true
 ```
-
+`이때 명령어 수행 직후 모니터링 터미널로 동작 확인` 
 15. 업데이트 내역 확인
 ```
 kubectl describe pod
