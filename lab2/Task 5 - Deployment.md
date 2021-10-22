@@ -54,10 +54,10 @@ watch -n 0.5 kubectl get pod
 
 10. create 명령으로 deployment 생성
 >-deployment 조건-  
-deployment name : dp2
-container image : nginx:1.14.0
-container port : 80
-replicas : 3
+deployment name : dp2  
+container image : nginx:1.14.0  
+container port : 80  
+replicas : 3  
 
 11. 컨테이너 이미지 1.15.0으로 버전 업데이트
 ```
