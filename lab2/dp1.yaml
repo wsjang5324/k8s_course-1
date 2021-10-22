@@ -1,7 +1,7 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: dm1
+  name: dp1
 spec:
   replicas: 3
   strategy:
@@ -11,7 +11,7 @@ spec:
       app: nginx
   template:
     metadata:
-      name: dm1-pod
+      name: dp1-pod
       labels:
         app: nginx
     spec:
