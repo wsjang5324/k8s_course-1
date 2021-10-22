@@ -1,6 +1,6 @@
 # Task 5 - Deployment
 
-### Deployment 을 직접 생성/조회/삭제 및 업데이트, 롤백
+### Deployment 을 생성, 조회, 업데이트, 롤백, 스케일링, 삭제
 #  
 
 1. Deployment 확인
