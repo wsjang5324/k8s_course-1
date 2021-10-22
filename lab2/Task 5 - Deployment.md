@@ -59,6 +59,11 @@ container image : nginx:1.14.0
 container port : 80  
 replicas : 3  
 
+```
+kubectl create deploy dp2 --image=nginx:1.14.0 --port=80 --replicas=3
+```
+
+
 11. 컨테이너 이미지 1.15.0으로 버전 업데이트
 ```
 kubectl set image deployment/dp2 nginx=nginx:1.15.0 --record=true
