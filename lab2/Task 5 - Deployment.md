@@ -1,6 +1,6 @@
 # Task 5 - Deployment
 
-### Deployment 을 직접 생성/조회/삭제
+### Deployment 을 직접 생성/조회/삭제 및 업데이트, 롤백
 #  
 
 1. Deployment 확인
@@ -63,7 +63,7 @@ replicas : 3
 ```
 kubectl set image deployment/dp2 nginx=nginx:1.15.0 --record=true
 ```
-`이때 명령어 수행 직후 모니터링 터미널로 동작 확인`
+`이때 명령어 수행 직후 모니터링 터미널로 동작 확인`  
 `record=true 값으로 해야 히스토리 확인시 어떤 내용인지 확인 가능`
 
 12. 업데이트 내역 확인
@@ -76,10 +76,8 @@ kubectl describe deploy
 ```
 kubectl edit deploy dp2
 ```
-```
-type: RollingUpdate -> type: Recreate 로 수정
-vi 편집기 사용법과 동일합니다.
-```
+`type: RollingUpdate -> type: Recreate 로 수정`  
+`vi 편집기 사용법과 동일합니다.`
 
 14. 컨테이너 이미지 1.16.0 으로 버전 업데이트
 ```
