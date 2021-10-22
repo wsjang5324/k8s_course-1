@@ -1,4 +1,4 @@
-# Task 2 - Namespace
+# Task 3 - Namespace
 
 ### namespace 를 직접 생성/조회/삭제 및 namespace 안에 리소스 생성/조회/삭제
 #  
@@ -74,4 +74,9 @@ kubectl get pod -n ns2
 12. namespace 삭제로 해당 namespace에 있던 리소스 모두와 함께 삭제
 ```
 kubectl delete ns ns2
+```
+
+13. 삭제 확인
+```
+kubectl get ns
 ```
