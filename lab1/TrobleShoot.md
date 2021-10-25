@@ -11,7 +11,7 @@ rm -rf \$HOME/.kube/config
 cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/kubelet.conf
-```
+```  
 
 
 
@@ -43,6 +43,3 @@ source /etc/bash_completion
 alias k=kubectl
 complete -F __start_kubectl k
 ```
-
-
-  
