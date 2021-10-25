@@ -4,7 +4,7 @@
 #
 1. 실습 디렉토리 이동
 ```
-cd ~/k8s_course/lab2
+cd ~/k8s_course/lab2/yaml
 ```
 
 2. Pod 조회
