@@ -80,5 +80,3 @@ cat svc3.yaml
 ```
 kubectl get svc
 ```
-
-14.
