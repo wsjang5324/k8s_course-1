@@ -12,9 +12,7 @@ cp -i /etc/kubernetes/admin.conf $HOME/.kube/config
 chown $(id -u):$(id -g) $HOME/.kube/config
 export KUBECONFIG=/etc/kubernetes/kubelet.conf
 ```
-
-
-
+#
 
 * swap 에러
 [ERROR Swap]: running with swap on is not supported. Please disable swap
