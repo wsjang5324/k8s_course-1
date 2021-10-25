@@ -4,7 +4,7 @@
 #
 * kubectl 명령 수행시 에러 메시지  
 
-  
+
 Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes")
 ```
 # 해결방법
@@ -45,7 +45,7 @@ complete -F __start_kubectl k
 #
 * connection 에러  
 
-error: unable to upgrade connection: pod does not exist
+error: unable to upgrade connection: pod does not exist  
 -> kubectl get nodes -o wide 했을 때 Internal IP 가 기존 IP와 상이 할 때
 ```
 # 모든 노드에서 아래파일의 내용 중 최하단 편집
