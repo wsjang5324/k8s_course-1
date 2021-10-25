@@ -37,3 +37,14 @@ source /etc/bash_completion
 alias k=kubectl
 complete -F __start_kubectl k
 ```
+
+#
+* connection 에러
+error: unable to upgrade connection: pod does not exist
+-> kubectl get nodes -o wide 했을 때 Internal IP 가 기존 IP와 상이 할 때
+```
+# 모든 노드에서 아래파일의 내용 중 최하단 편집
+vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
+
+ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS `--node-ip <host ip>`
+```
