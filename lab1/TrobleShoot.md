@@ -2,7 +2,6 @@
 
 ### 실습 트러블 슈팅 모음  
 #
-
 * kubectl 명령 수행시 에러 메시지
 Unable to connect to the server: x509: certificate signed by unknown authority (possibly because of "crypto/rsa: verification error" while trying to verify candidate authority certificate "kubernetes")
 ```
@@ -20,10 +19,7 @@ export KUBECONFIG=/etc/kubernetes/kubelet.conf
 swapoff -a
 sudo sed -i '/ swap / s/^/#/' /etc/fstab
 ```
-
-
-
-
+#
 * kubeadm reset -> kubeadm init 한 뒤에는 항상 아래 명령 진행
 ```
 mkdir -p $HOME/.kube
