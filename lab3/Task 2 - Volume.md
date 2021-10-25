@@ -2,7 +2,8 @@
 
 ### 쿠버네티스의 볼륨 사용법을 학습합니다.
 #  
-> emtydir type Volume
+
+#### emtydir type Volume
 
 1. yaml 확인
 
