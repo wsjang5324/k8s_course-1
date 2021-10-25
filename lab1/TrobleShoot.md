@@ -39,7 +39,8 @@ complete -F __start_kubectl k
 ```
 
 #
-* connection 에러
+* connection 에러  
+
 error: unable to upgrade connection: pod does not exist
 -> kubectl get nodes -o wide 했을 때 Internal IP 가 기존 IP와 상이 할 때
 ```
