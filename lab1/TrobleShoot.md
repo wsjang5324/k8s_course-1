@@ -48,3 +48,10 @@ error: unable to upgrade connection: pod does not exist
 vi /etc/systemd/system/kubelet.service.d/10-kubeadm.conf
 ```
 ExecStart=/usr/bin/kubelet $KUBELET_KUBECONFIG_ARGS $KUBELET_CONFIG_ARGS $KUBELET_KUBEADM_ARGS $KUBELET_EXTRA_ARGS `--node-ip <host ip>`
+
+```
+# 편집 후
+systemctl daemon-reload && systemctl restart kubelet
+# 노드 ip 확인
+kubectl get nodes -o wide
+```
