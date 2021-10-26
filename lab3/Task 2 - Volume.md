@@ -54,7 +54,6 @@ exit
 ```
 #
 #### Hostpath Type Volume
-#
 
 7. yaml 확인
 ```
@@ -92,7 +91,6 @@ cat test.txt
 ```
 #
 #### PV Type Volume
-#
 
 13. PV, PVC, Pod yaml 확인
 ```

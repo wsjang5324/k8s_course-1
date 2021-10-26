@@ -12,6 +12,9 @@ cd ~/k8s_course/lab3/yaml
 kubectl get service
 kubectl get svc
 ```  
+#
+#### ClusterIP Type Service
+
 
 3. yaml 확인
 
@@ -42,6 +45,10 @@ curl <svc의 ClusterIP>:9090
 ```  
 `6에서 확인한 IP를 입력합니다.`
 
+#
+#### Nodeport Type Service
+
+
 8. 두번째 Servcie yaml 확인
 ```
 cat svc2.yaml
@@ -70,6 +77,8 @@ curl <Worker노드의 IP>:30000
 ```
 `11에서 확인한 노드의 IP를 기입합니다.`
 
+#
+#### Loadbalancer Type Service
 
 12. 세번째 Servcie yaml 확인
 ```
