@@ -1,23 +1,98 @@
-# Task1 - Version, Resource.md  
+# Task 2 - Job, cronjob
 
-### 2가지 명령을 진행함으로, 버전과 kubernetes에서 사용되는 리소스의 api 버전, 목록, short name 들을 확인
+### job, cronjob 컨트롤러의 동작방식과 기능 확인
 #
-1. kubectl 버전확인
-```
-kubectl version
-```
 
-2. 리소스 목록, api 버전, short name 확인
+1. job 조회
 ```
-kubectl api-resources
-```  
-![image](https://user-images.githubusercontent.com/92773629/138027152-bbde5c41-2a20-4516-b366-b036e47dcad2.png)  
-3. 현재 적용되어있는 클러스터 확인
-```
-kubectl config current-context
+kubectl get job
 ```  
 
-4. 클러스터의 유저와 정보 확인
+3. yaml 확인
 ```
-kubectl config view
+cat job1.yaml
+```
+
+4. job 생성
+```
+kubectl create -f job1.yaml
+```
+
+5. job 확인
+```
+kubectl get job
+kubectl get pod
+kubectl describe job job1
+```
+
+6. 1분정도 대기 후 재확인
+```
+kubectl get job
+kubectl get pod
+kubectl describe job job1
+```
+
+7. job1 pod가 실행한 결과 확인
+```
+kubectl logs <위 과정에서 확인한 pod명>
+```
+
+#
+
+8. 두번째 job yaml 확인
+```
+cat job2.yaml
+```
+
+9. job 생성
+```
+kubectl create -f job2.yaml
+```
+
+10. job 확인
+```
+kubectl get job job2
+kubectl get pod
+kubectl describe job job2
+```
+
+11. 30초 정도 뒤에 재확인
+```
+kubectl get job job2
+kubectl get pod
+kubectl describe job job2
+```
+
+12. job clear
+```
+kubectl delete job --all
+```
+
+13. cronjob yaml 확인
+```
+cat cronjob1.yaml
+```
+
+14. cronjob 생성
+```
+kubectl create -f cronjob1.yaml
+```
+
+15. 1분정도 뒤에 확인
+```
+kubectl get cronjob
+kubectl get job
+kubectl get pod
+```
+
+16. 다시 1분정도 뒤에 재확인
+```
+kubectl get cronjob
+kubectl get job
+kubectl get pod
+```
+
+17. clear
+```
+kubectl delete cronjob --all
 ```
