@@ -92,7 +92,33 @@ kubectl get job
 kubectl get pod
 ```
 
-17. clear
+17. edit 명령을 사용하여 cronjob 중지
+```
+kubectl edit cronjob cronjob1
+```
+```
+# suspend 값을 false에서 true로 변경합니다.
+
+:%s/false/true/g
+:wq
+```
+
+18. cronjob 중지된것을 확인
+```
+kubectl get cronjob
+```
+
+19. patch 명령을 사용하여 위 17에서 변경한 true 값을 false로 복구
+```
+kubectl patch cronjob cronjob1 -p '{"spec" : {"suspend" : false }}'
+```
+
+20. 다시 cronjob 을 확인하여 ACTIVE 값이 증가된것을 확인
+```
+kubectl get cronjob
+```
+
+21. clear
 ```
 kubectl delete cronjob --all
 ```
