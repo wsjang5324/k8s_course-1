@@ -1,6 +1,6 @@
 # Task 3 - k8s install
 
-###  kubernetes를 설치하고 Master 노드와 Worker 노드를 연동합니다.
+###  kubernetes를 설치하고 Master 노드와 Worker 노드를 연동
 #
 1. kubeadm, kubelet, kubectl 설치
 

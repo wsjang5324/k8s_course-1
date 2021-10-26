@@ -1,6 +1,6 @@
 # Task2 - Volume  
 
-### 쿠버네티스의 볼륨 사용법을 학습합니다.
+### 유형별 볼륨 생성 및 기능 확인
 #  
 
 #### Emptydir Type Volume

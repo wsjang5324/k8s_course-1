@@ -1,6 +1,6 @@
 # Task3 - Configmap, Secret
 
-### 환경설정 정보를 관리하는 Configmap 과 Secret 학습
+### 환경설정 정보를 관리하는 Configmap 과 Secret 사용법
 #  
 
 1. yaml 확인
