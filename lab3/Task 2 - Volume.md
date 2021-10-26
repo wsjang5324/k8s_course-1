@@ -3,7 +3,7 @@
 ### 쿠버네티스의 볼륨 사용법을 학습합니다.
 #  
 
-#### emtydir type Volume
+#### Emptydir Type Volume
 
 1. yaml 확인
 
@@ -52,6 +52,9 @@ ls
 cat test.txt
 exit
 ```
+#
+#### Hostpath Type Volume
+#
 
 7. yaml 확인
 ```
@@ -87,8 +90,11 @@ cd /tmp
 ls
 cat test.txt
 ```
+#
+#### PV Type Volume
+#
 
-13. PV, PVC, 해당 실습에 사용할 Pod yaml 확인
+13. PV, PVC, Pod yaml 확인
 ```
 cat pv.yaml pvc.yaml pv-pod.yaml
 ```
