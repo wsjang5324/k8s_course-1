@@ -1,6 +1,6 @@
 # Task 2 - ResourseQuota
 
-###
+### Namespace 리소스를 제한
 #
 
 1. yaml 확인
