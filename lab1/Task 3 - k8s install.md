@@ -17,6 +17,12 @@ sudo apt-get -y update
 ```
 sudo apt-get install -y kubelet kubeadm kubectl
 ```
+```
+sudo apt-mark hold kubelet kubeadm kubectl
+```
+```
+systemctl enable --now kubelet
+```
 
 `2~5 과정은 Master 노드에서만 진행합니다.`
 
