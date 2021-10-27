@@ -1,75 +1,57 @@
-# Task 1 - Daemonset  
+# Task 1 - Statefulset
 
-### 또 다른 컨트롤러인 Daemonset의 동작방식과 기능들을 확인
+### 두 컨트롤러를 생성해보며 stateful 과 stateless 비교
 #
 
 1. 실습 디렉토리 이동
 ```
-cd ~/k8s_course/lab4/yaml
+cd ~/k8s_course/lab5/yaml
 ```
 
-2. Daemonset 조회
+2. yaml 확인
 ```
-kubectl get daemonset
-```  
-
-3. yaml 확인
-```
-cat daemonset1.yaml
+cat statefulset.yaml replicaset.yaml
 ```
 
-4. daemonset 생성
+3. 각 리소스 생성
 ```
-kubectl create -f daemonset1.yaml
-```
-
-5. 생성된 리소스 확인
-```
-kubectl get daemonset
-kubectl get pod
+kubectl create -f statefulset.yaml
+kubectl create -f replicaset.yaml
 ```
 
-6. 생성된 각 Pod 가 각 워커노드에 생성되었는지 확인
+4. 생성한 리소스 확인
 ```
-kubectl get pod -o wide
-kubectl describe pod
-```
-
-7. nodeselector 기능을 확인하기위해 각 워커노드에 labeling
-```
-kubectl label nodes k8s-worker1 os=centos
-kubectl label nodes k8s-worker2 os=ubuntu
+kubectl get rs
+kubectl get statefulset
 ```
 
-8. 두번째 Daemonset yaml 확인
+5.  터미널을 하나 더 오픈하여 모니터링용 터미널을 생성
 ```
-cat daemonset2.yaml
-```
-
-9. daemonseet 생성
-```
-kubectl create -f daemonset2.yaml
+watch -n 0.5 kubectl get pod
 ```
 
-10. 생성된 리소스 확인
+6. 위 3에서 생성한 두 컨트롤러의 replicas 를 5로 수정한 뒤 모니터링용 터미널 확인
 ```
-kubectl get daemonset
-kubectl get pod
+kubectl scale statefulset ss --replicas=5
+
+# 모니터링용 터미널 확인
+
+kubectl scale replicaset rs --replicas=5
+
+# 모니터링용 터미널 확인
+```
+7. 다시 두 컨틀롤러의 replicas를 0으로 수정한 뒤 확인
+```
+kubectl scale statefulset ss --replicas=0
+
+# 모니터링용 터미널 확인
+
+kubectl scale replicaset rs --replicas=0
+
+# 모니터링용 터미널 확인
 ```
 
-11. 생성된 각 Pod 어떤 워커노드에 생성되었는지 확인
+8. clear
 ```
-kubectl get pod -o wide
-kubectl describe pod
-```
-
-12. 워커노드에 설정했던 Label 삭제
-```
-kubectl label nodes k8s-worker1 os-
-kubectl label nodes k8s-worker2 os-
-```
-
-13. clear
-```
-kubectl delete daemonset --all
+kubectl delete statefulset,rs --all
 ```
